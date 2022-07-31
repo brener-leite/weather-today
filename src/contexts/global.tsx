@@ -1,5 +1,8 @@
 import { createContext, useState, useMemo } from 'react'
 import { ContextProps, Language, ProviderProps } from './interfaces'
+import PT from 'messages/pt.json'
+import EN from 'messages/en.json'
+import { useEffect } from 'react'
 
 const INITIAL_VALUE: ContextProps = {
   language: 'english',
@@ -9,14 +12,25 @@ const INITIAL_VALUE: ContextProps = {
 export const GlobalContext = createContext(INITIAL_VALUE)
 
 export const GlobalProvider: React.FC<ProviderProps> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('english')
+  const [language, setLanguage] = useState<Language>('portuguese')
+
+  const availableLanguages = {
+    portuguese: PT,
+    english: EN
+  }
+  const [messages, setMessages] = useState(availableLanguages[language])
+
+  useEffect(() => {
+    setMessages(availableLanguages[language])
+  }, [language])
 
   const value = useMemo(
     () => ({
       language,
-      setLanguage
+      setLanguage,
+      messages
     }),
-    [language, setLanguage]
+    [language, setLanguage, messages]
   )
 
   return (
