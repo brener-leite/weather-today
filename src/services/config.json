@@ -1,0 +1,12 @@
+{
+  "proxy": "http://localhost:9090",
+  "endpoints": {
+    "bing": "https://www.bing.com",
+    "weather": "http://api.openweathermap.org",
+    "geolocation": "https://api.opencagedata.com"
+  },
+  "appkeys": {
+    "weather": "772920597e4ec8f00de8d376dfb3f094",
+    "geolocation": "c63386b4f77e46de817bdf94f552cddf"
+  }
+}
