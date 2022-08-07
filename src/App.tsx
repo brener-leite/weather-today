@@ -1,15 +1,18 @@
-import { useContext } from 'react'
-import { GlobalContext } from 'contexts/global'
+import { useFetch } from 'hooks/useFetch'
+import config from 'services/config.json'
+import * as S from 'styles/app'
+import { BingProps } from 'services/interfaces'
 
 const App = () => {
-  const { messages, setLanguage } = useContext(GlobalContext)
+  const { data: bing } = useFetch<BingProps>(
+    `${config.proxy}/${config.endpoints.bing}/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=pt-BR`
+  )
+  const bingImage = `${config.endpoints.bing}/${bing?.images?.[0]?.url}`
 
   return (
-    <div>
-      <h1>{messages?.app.title}</h1>
-      <h2>{messages?.app.subtitle}</h2>
-      <button onClick={() => setLanguage('english')}>click</button>
-    </div>
+    <S.Container background={bingImage}>
+      <div></div>
+    </S.Container>
   )
 }
 

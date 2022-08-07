@@ -5,18 +5,18 @@ import EN from 'messages/en.json'
 import { useEffect } from 'react'
 
 const INITIAL_VALUE: ContextProps = {
-  language: 'english',
+  language: 'en-US',
   setLanguage: () => {}
 }
 
 export const GlobalContext = createContext(INITIAL_VALUE)
 
 export const GlobalProvider: React.FC<ProviderProps> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('portuguese')
+  const [language, setLanguage] = useState<Language>('pt-BR')
 
   const availableLanguages = {
-    portuguese: PT,
-    english: EN
+    'pt-BR': PT,
+    'en-US': EN
   }
   const [messages, setMessages] = useState(availableLanguages[language])
 
@@ -30,7 +30,7 @@ export const GlobalProvider: React.FC<ProviderProps> = ({ children }) => {
       setLanguage,
       messages
     }),
-    [language, setLanguage, messages]
+    [language, setLanguage, messages, availableLanguages]
   )
 
   return (

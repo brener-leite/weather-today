@@ -6,7 +6,7 @@ export interface ContextProps {
   messages?: MassagesProps
 }
 
-export type Language = 'portuguese' | 'english'
+export type Language = 'pt-BR' | 'en-US'
 
 export interface ProviderProps {
   children: JSX.Element
