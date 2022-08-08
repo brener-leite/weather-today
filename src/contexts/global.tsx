@@ -14,15 +14,18 @@ export const GlobalContext = createContext(INITIAL_VALUE)
 export const GlobalProvider: React.FC<ProviderProps> = ({ children }) => {
   const [language, setLanguage] = useState<Language>('pt-BR')
 
-  const availableLanguages = {
-    'pt-BR': PT,
-    'en-US': EN
-  }
+  const availableLanguages = useMemo(
+    () => ({
+      'pt-BR': PT,
+      'en-US': EN
+    }),
+    []
+  )
   const [messages, setMessages] = useState(availableLanguages[language])
 
   useEffect(() => {
     setMessages(availableLanguages[language])
-  }, [language])
+  }, [language, availableLanguages])
 
   const value = useMemo(
     () => ({
@@ -30,7 +33,7 @@ export const GlobalProvider: React.FC<ProviderProps> = ({ children }) => {
       setLanguage,
       messages
     }),
-    [language, setLanguage, messages, availableLanguages]
+    [language, setLanguage, messages]
   )
 
   return (

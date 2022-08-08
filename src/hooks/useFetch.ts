@@ -21,7 +21,7 @@ export const useFetch = <T = unknown>(
       .finally(() => {
         setIsFetching(false)
       })
-  }, [])
+  }, [options, url])
 
   return { data, error, isFetching }
 }
