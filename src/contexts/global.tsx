@@ -1,18 +1,18 @@
 import { createContext, useState, useMemo } from 'react'
-import { ContextProps, Language, ProviderProps } from './interfaces'
+import { ContextProps, LanguageProps, ProviderProps } from './interfaces'
 import PT from 'messages/pt.json'
 import EN from 'messages/en.json'
 import { useEffect } from 'react'
 
 const INITIAL_VALUE: ContextProps = {
-  language: 'en-US',
+  language: 'pt-BR',
   setLanguage: () => {}
 }
 
 export const GlobalContext = createContext(INITIAL_VALUE)
 
 export const GlobalProvider: React.FC<ProviderProps> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('pt-BR')
+  const [language, setLanguage] = useState<LanguageProps>('pt-BR')
 
   const availableLanguages = useMemo(
     () => ({
