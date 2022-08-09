@@ -2,5 +2,11 @@
   "app": {
     "title": "Hello, world!",
     "subtitle": "Here's a subtitle"
+  },
+  "input": {
+    "placeholder": "Which city?"
+  },
+  "button": {
+    "text": "Search"
   }
 }

@@ -2,5 +2,11 @@
   "app": {
     "title": "Olá, mundo!",
     "subtitle": "Jaz aqui um subtítulo"
+  },
+  "input": {
+    "placeholder": "Pesquise a cidade..."
+  },
+  "button": {
+    "text": "Buscar"
   }
 }
