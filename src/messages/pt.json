@@ -8,5 +8,18 @@
   },
   "button": {
     "text": "Buscar"
+  },
+  "weather": {
+    "days": {
+      "first": "Hoje",
+      "second": "Amanhã",
+      "third": "Depois de amanhã"
+    },
+    "wind": "Vento",
+    "humidity": "Umidade",
+    "pressure": "Pressão"
+  },
+  "feedback": {
+    "cityNotFound": "Cidade não encontrada"
   }
 }
