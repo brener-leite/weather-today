@@ -13,6 +13,7 @@ export const Select = styled.select`
   padding-bottom: 5px;
   border-bottom: 1px solid ${theme.color.grey.dark};
   color: ${theme.color.grey.dark};
+  padding-right: 5px;
 
   option {
   }

@@ -1,5 +1,5 @@
 import { LanguageProps } from 'contexts/interfaces'
 
-export interface LanguageSwitchProps {
+export interface LanguageSwitcherProps {
   options: LanguageProps[]
 }
