@@ -1,5 +1,10 @@
 import React from 'react'
 
 export interface CardProps {
-  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void
+  onSubmit: (value: string) => void
+  location?: string
+}
+
+export interface FormProps extends HTMLFormControlsCollection {
+  city?: HTMLInputElement
 }

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import theme from 'styles/theme'
 import * as S from './styles'
 import { ImCompass2 } from 'react-icons/im'
@@ -12,10 +12,10 @@ import {
   BsCloudLightningRain,
   BsCloudFog
 } from 'react-icons/bs'
-import { CardProps } from './interfaces'
+import { CardProps, FormProps } from './interfaces'
 import { Skeleton } from '@mui/material'
 
-const Card: React.FC<CardProps> = ({ onSubmit }) => {
+const Card: React.FC<CardProps> = ({ onSubmit, location }) => {
   const { messages, unit, weather, isFetchingData } = useContext(GlobalContext)
   const icons = {
     2: <BsCloudLightningRain color="#fff" />,
@@ -61,12 +61,22 @@ const Card: React.FC<CardProps> = ({ onSubmit }) => {
         <div>
           <ImCompass2 size={32} color={theme.color.grey.dark} />
         </div>
-        <form onSubmit={onSubmit}>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault()
+            const value: string | undefined = (
+              (e.target as HTMLFormElement).elements as FormProps
+            ).city?.value
+
+            !!value && onSubmit(value)
+          }}
+        >
           <input
             type="text"
             name="city"
             required
             placeholder={messages?.input?.placeholder}
+            defaultValue={location}
           />
           {!!messages?.button.text && (
             <Button type="submit" text={messages.button.text} />
