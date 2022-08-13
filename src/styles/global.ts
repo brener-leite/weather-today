@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import theme from './theme'
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -7,6 +8,9 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     outline: none;
     font-display: block;
+    font-family: 'Open Sans', sans-serif;
+    font-size: ${theme.font.size.sm};
+    color: #${theme.color.grey.darkest};
   }
   html,
   body {
@@ -194,11 +198,6 @@ const GlobalStyles = createGlobalStyle`
   * 2. Prevent iOS text size adjust after orientation change, without disabling
   *    user zoom.
   */
-  html {
-    font-size: 62.5%; /* 1 */
-    -webkit-text-size-adjust: 62.5%; /* 2 */
-    -ms-text-size-adjust: 62.5%; /* 2 */
-  }
   a {
     text-decoration: none;
   }
