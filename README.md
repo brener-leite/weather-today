@@ -15,7 +15,7 @@ Teste técnico para desenvolvedor front-end da Hurb: [aqui](https://github.com/h
 - [Styled Components](https://styled-components.com/)
 - [Jest](https://jestjs.io/)
 - [Axios](https://axios-http.com/ptbr/docs/intro)
-- [Cors Proxy Serveer](https://www.npmjs.com/package/cors-proxy-server)
+- [Cors Proxy Server](https://www.npmjs.com/package/cors-proxy-server)
 - [Concurrently](https://www.npmjs.com/package/concurrently)
 - [React Icons](https://react-icons.github.io/react-icons/)
 - [React Hot Toast](https://react-hot-toast.com/)
