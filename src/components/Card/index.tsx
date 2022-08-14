@@ -62,6 +62,7 @@ const Card: React.FC<CardProps> = ({ onSubmit, location }) => {
           <ImCompass2 size={32} color={theme.color.grey.dark} />
         </div>
         <form
+          aria-label="form"
           onSubmit={(e) => {
             e.preventDefault()
             const value: string | undefined = (
